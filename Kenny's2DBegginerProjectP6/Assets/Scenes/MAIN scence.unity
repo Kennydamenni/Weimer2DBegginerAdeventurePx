@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 336665154}
   - component: {fileID: 336665153}
   - component: {fileID: 336665152}
-  - component: {fileID: 336665155}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,27 +214,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &336665155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336665151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f66ecebbf6d184d9c14b65b91b901e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 8d8306d1-f3e7-4733-b1b8-1def8a68c0ba
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1 &372881589
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 372881589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73266,38 +73244,46 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7b83ca9e-970e-4cc6-9e0a-37ab84101593
-      m_Path: <Keyboard>/leftArrow
+    - m_Name: 2D Vector
+      m_Id: 333d43d5-a4e1-448d-aa1a-eabb37d38cfc
+      m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Move
-      m_Flags: 0
-    - m_Name: 
-      m_Id: f0320793-cd86-46cb-9c8e-4f747357bb31
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 771242b2-23f4-4328-a682-f326478fd029
       m_Path: <Keyboard>/upArrow
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Move
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 6b9f9c37-4dd8-4fdb-878f-fb634a0f083a
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 606ba491-e0e7-486b-b7c4-b57cbfb46e11
       m_Path: <Keyboard>/downArrow
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Move
-      m_Flags: 0
-    - m_Name: 
-      m_Id: fcefd06b-9a49-45fa-ba56-b475712718b0
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 248b0b64-8373-482d-9901-ab2ba41fa80b
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 443a4818-5aa0-45b0-a770-14697c3775f0
       m_Path: <Keyboard>/rightArrow
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Move
-      m_Flags: 0
+      m_Flags: 8
     m_Flags: 0
 --- !u!1001 &2225497457411729249
 PrefabInstance:
