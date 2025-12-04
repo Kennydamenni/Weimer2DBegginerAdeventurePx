@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: d1b62e3f28d93504c89e59edee0c6189
+  productGUID: 00000000000000000000000000000000
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -916,7 +916,7 @@ PlayerSettings:
   cloudProjectId: 1759f585-ae68-451b-a7e8-d4e188d11dc5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Kenny's2DBegginerProjectP6
+  projectName: 
   organizationId: unity_736659
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
