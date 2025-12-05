@@ -122,6 +122,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &231669701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6114664027710939998, guid: 46aa12eb29e2e814ab150319993624c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2225497457411729249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &231669704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231669701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d93c004e218ecf44a7b6d9aa513b967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &231669705
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231669701}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 2
+    adaptiveTiling: 1
+  m_AutoTiling: 1
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 2.56}
+  m_EdgeRadius: 0
 --- !u!1 &336665151
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,6 +336,7 @@ GameObject:
   - component: {fileID: 516919855}
   - component: {fileID: 516919857}
   - component: {fileID: 516919856}
+  - component: {fileID: 516919858}
   m_Layer: 0
   m_Name: GameTileMap
   m_TagString: Untagged
@@ -73254,6 +73318,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &516919858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516919851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d93c004e218ecf44a7b6d9aa513b967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1943191798
 GameObject:
   m_ObjectHideFlags: 0
@@ -73265,6 +73341,7 @@ GameObject:
   - component: {fileID: 1943191801}
   - component: {fileID: 1943191800}
   - component: {fileID: 1943191799}
+  - component: {fileID: 1943191802}
   m_Layer: 0
   m_Name: CollectibleHealth
   m_TagString: Untagged
@@ -73384,6 +73461,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943191802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943191798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f7b676a350e9d469d051400a9257dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2119120875033801033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73523,7 +73612,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6114664027710939998, guid: 46aa12eb29e2e814ab150319993624c6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 231669705}
+    - targetCorrespondingSourceObject: {fileID: 6114664027710939998, guid: 46aa12eb29e2e814ab150319993624c6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 231669704}
   m_SourcePrefab: {fileID: 100100000, guid: 46aa12eb29e2e814ab150319993624c6, type: 3}
 --- !u!1001 &5054189441766331368
 PrefabInstance:
