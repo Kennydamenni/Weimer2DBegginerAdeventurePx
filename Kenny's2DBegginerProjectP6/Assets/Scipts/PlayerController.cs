@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     // variables related to the health system 
     public int maxHealth = 5;
+    int currentHealth;
     public int health { get { return currentHealth; }}
-    int currentHealth = 1;
 
 
     // Variables related to temporary invincibility
@@ -26,19 +25,53 @@ public class PlayerController : MonoBehaviour
     float damageCooldown;
 
 
+    //Variables related to animation
+    Animator animator;
+    Vector2 moveDirection = new Vector2(1, 0);
+
+
+    // Varibles related to projectile
+    public GameObject projectilePrefab;
+
+        
     // Start is called before the first frame update
     void Start()
     {
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
-        // currentHealth = maxHealth;
+        
+        
+
+        currentHealth = maxHealth;
     }
+        
 
     // Update is called once per frame
     void Update()
     {
-       move = MoveAction.ReadValue<Vector2>();
+        move = MoveAction.ReadValue<Vector2>();
+
+
+        if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
+        {
+            moveDirection.Set(move.x, move.y);
+            moveDirection.Normalize();
+        }
+
+        animator.SetFloat("Look X", moveDirection.x);
+        animator.SetFloat("look Y", moveDirection.y);
+        animator.SetFloat("Speed", move.magnitude);
+
+
+        if (isInvincible )
+        {
+            damageCooldown = Time.deltaTime;
+            if (damageCooldown < 0)
+                isInvincible = false;
+        }
     }
+
+
     // FixedUpdate has the same call rate as the rythem system
     void FixedUpdate()
     {
@@ -51,18 +84,26 @@ public class PlayerController : MonoBehaviour
     {
        if (amount < 0)
        {
-         if (isInvincible)
-         {
-            return;
-         }
-        isInvincible = true;
+            if (isInvincible)
+                return;
+            
+            isInvincible = true;
             damageCooldown = timeInvincible;
+            animator.SetTrigger("Hit");
        }
-       currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+       currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+       UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
     }
-
-
+       
+     void Launch()
+     {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(moveDirection, 300);
+        animator.SetTrigger("Launch");
+     }
+     
+     
 }
 
 
