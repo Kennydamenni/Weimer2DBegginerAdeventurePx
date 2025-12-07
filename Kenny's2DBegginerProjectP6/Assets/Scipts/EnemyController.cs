@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     float timer;
     int direction = 1;
+    bool broken = true;
 
 
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     timer -= Time.deltaTime;
+        timer -= Time.deltaTime;
 
 
         if (timer < 0)
@@ -41,6 +42,12 @@ public class EnemyController : MonoBehaviour
     // FixedUpdate has the same cell rate as the physics system 
     private void FixedUpdate()
     {
+        if(!broken)
+        {
+            return;
+        }    
+        
+         
         Vector2 position = rigidbody2d.position;
         
         if (vertical)
@@ -66,13 +73,24 @@ public class EnemyController : MonoBehaviour
     {
         PlayerController player = other.gameObject .GetComponent<PlayerController>();
 
-
-
         if (player != null)
         {
             player.ChangeHealth(-1);
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
+
+    public void Fix()
+    {
+        broken = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+        animator.SetTrigger("Fixed");
     }
 
 

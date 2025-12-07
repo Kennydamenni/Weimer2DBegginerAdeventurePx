@@ -21,11 +21,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Projectile collisiom with " + other.gameObject);
+        EnemyController enemy = other.GetComponent<EnemyController>();
+        if (enemy != null)
+        {
+            enemy.Fix();
+        }
+
+
         Destroy(gameObject);
-    }
-
-
+    }     
 
 
 }
